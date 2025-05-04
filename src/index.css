@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Шрифт сайта */
 body {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Кастомные переменные для темы Lomi */
+@layer base {
+  :root {
+    --lomi-bg-1: #20263c;
+    --lomi-bg-2: #0d0f17;
+    --lomi-green: #9ddf44;
+    --lomi-radius: 12px;
+  }
+}
+
+@layer components {
+  .lomi-toast {
+    @apply text-white flex items-center px-4 py-3 shadow-xl transition-all duration-500;
+    background: radial-gradient(
+      120% 120% at 50% 20%,
+      var(--lomi-bg-1) 0%,
+      var(--lomi-bg-2) 100%
+    );
+    border: 1px solid var(--lomi-green);
+    border-radius: var(--lomi-radius);
+  }
+
+  .lomi-toast-body {
+    @apply m-0 text-sm leading-snug;
+  }
+
+  .lomi-toast-progress {
+    background: var(--lomi-green);
+    height: 4px;
+    border-bottom-left-radius: var(--lomi-radius);
+    border-bottom-right-radius: var(--lomi-radius);
+  }
 }

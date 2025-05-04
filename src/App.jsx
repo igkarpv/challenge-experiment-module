@@ -9,10 +9,25 @@ import Campaigns from "./Pages/Campaigns";
 import HowItWorks from "./Pages/HowItWorks";
 import MyCampaigns from "./Pages/MyCampaigns";
 import ScrollToTop from "./Components/ScrollToTop";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./index.css"; // тут лежат lomi-toast стили
+
 
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer
+  position="bottom-right"
+  autoClose={4000}
+  hideProgressBar={false}
+  closeOnClick
+  pauseOnHover
+  draggable
+  toastClassName="lomi-toast"
+  bodyClassName="lomi-toast-body"
+  progressClassName="lomi-toast-progress"
+/>
       <div className="bg-gray-950">
         <Navbar />
         <ScrollToTop />
